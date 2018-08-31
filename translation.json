@@ -19,6 +19,8 @@
 	"char_spare_time_points": "Spare Time Points",
 	"char_spare_time_roll": "Spare Time Roll",
 	"attributes": "Attributes",
+	"atr_assign": "Assign",
+	"atr_modifier": "Modifier",
 	"atr_current": "Cur",
 	"atr_max": "Max",
 	"atr_traits": "Traits",
