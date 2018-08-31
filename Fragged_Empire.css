@@ -11,6 +11,13 @@ td,
 th{
     box-sizing: border-box;
 }
+tr.sheet-text{
+    margin: 0px;
+    padding-left: 0.3em;
+    padding-right: 0.1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
 input[type=radio].sheet-styleCharacter,
 input[type=radio].sheet-styleCombat,
 input[type=radio].sheet-styleSpacecraft,
@@ -27,19 +34,31 @@ input[type=radio].sheet-styleNotes + span{
     color: #888888;
     text-align:left;
 }
-input[type=radio].sheet-styleCharacter:checked ~ .sheet-character,
+/* Color Template:
+    #86BBD8 Dark Sky Blue   #73A5CA #608FBC #4D79AE
+    #33658A Teal Blue
+    #2F4858 Dark Slate Gray
+    #F6AE2D Saffron
+    #F26419 Giant's Orange
+
+*/
+input[type=radio].sheet-styleCharacter:checked ~ .sheet-character{
+    background: linear-gradient(#33658A, #DBDCDE, #E0E7ED, white);
+    width: 1056px;
+    padding: 10px;
+}
 input[type=radio].sheet-styleCombat:checked ~ .sheet-combat{
-    background: linear-gradient(#142611, #DBDCDE, #E0E7ED, white);
+    background: linear-gradient(#2F4858, #DBDCDE, #E0E7ED, white);
     width: 1056px;
     padding: 10px;
 }
 input[type=radio].sheet-styleSpacecraft:checked ~ .sheet-spacecraft{
-    background: linear-gradient(#2B2C40, #DBDCDE, #E0E7ED, white);
+    background: linear-gradient(#F6AE2D, #DBDCDE, #E0E7ED, white);
     width: 1056px;
     padding: 10px;
 }
 input[type=radio].sheet-styleNotes:checked ~ .sheet-notes{
-    background: linear-gradient(#993d00, #DBDCDE, #E0E7ED, white);
+    background: linear-gradient(#F26419, #DBDCDE, #E0E7ED, white);
     width: 1056px;
     padding: 10px;
 }
@@ -99,6 +118,7 @@ input[type=textarea]{
     padding-right: 0.1em;
     padding-top: 0.1em;
     padding-bottom: 0.1em;
+    resize: none;
 }
 select{
     height: 22px;
@@ -119,13 +139,23 @@ input[type="number"]{
     padding-bottom: 0.1em;
 }
 .sheet-header{
-    color: white;
+    /*color: white;*/
     font-weight: bold;
     font-size: 10px;
 }
 .sheet-attributes{
     color: white;
-    background: #262626;
+    background: #2F4858;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 10px;
+    margin: 0px 0px 0px 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.sheet-fate{
+    color: black;
+    background: #F6AE2D;
     font-weight: bold;
     font-size: 12px;
     padding-left: 10px;
@@ -152,4 +182,239 @@ input[type="number"]{
 .sheet-small-center{
     font-size: 10px;
     text-align: center;
+}
+
+.sheet-fillerz
+{
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+input.sheet-filler[type="radio"],
+input.sheet-fillerx[type="radio"]
+{
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Fake radio */
+input[type="radio"] + span::before
+{
+    margin-right: 4px;
+    border: solid 1px #a8a8a8;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    
+    background: #ffffff;
+    background: -moz-radial-gradient(#ffffff, #f9f9f9);
+    background: -webkit-radial-gradient(#ffffff, #f9f9f9);
+    background: -ms-radial-gradient(#ffffff, #f9f9f9);
+    background: -o-radial-gradient(#ffffff, #f9f9f9);
+    background: radial-gradient(#ffffff, #f9f9f9);
+}
+input.sheet-filler[type="radio"] + span::before,
+input.sheet-fillerx[type="radio"] + span::before
+{
+    content: "";
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+input.sheet-zero[type="radio"] + span::before
+{
+    content: "0" !important;
+}
+input.sheet-five[type="radio"] + span::before
+{
+    content: "5";
+}
+input.sheet-ten[type="radio"] + span::before
+{
+    content: "10";
+}
+input.sheet-fifteen[type="radio"] + span::before
+{
+    content: "15";
+}
+input.sheet-twenty[type="radio"] + span::before
+{
+    content: "20";
+}
+input.sheet-twentyfive[type="radio"] + span::before
+{
+    content: "25";
+}
+input.sheet-thirty[type="radio"] + span::before
+{
+    content: "30";
+}
+input.sheet-filler[type="radio"] + span::before
+{
+    content: "●";
+}
+input.sheet-fillerx[type="radio"]:checked + span::before
+{
+    content: "●";
+}
+/* Remove dot from all radios _after_ selected one */
+input.sheet-filler[type="radio"]:checked ~ input.sheet-filler[type="radio"] + span::before,
+input.sheet-fillerx[type="radio"]:checked ~ input.sheet-filler[type="radio"] + span::before
+{    
+    content: "";
+}
+
+/* Auto expand textareas */
+.sheet-auto-expand {
+	position: relative;
+	cursor: text;
+	word-wrap: break-word;
+    min-height: 50px;
+}
+.sheet-auto-expand span {
+	visibility: hidden;
+	white-space: pre-wrap;
+	display: block;
+}
+.sheet-auto-expand textarea {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	resize: none;
+	height: 100%;
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	border: none;
+}
+
+/* sheet roll template */
+.sheet-rolltemplate-fragged_empire table>thead>tr>th, 
+.sheet-rolltemplate-fragged_empire table>tbody>tr>th, 
+.sheet-rolltemplate-fragged_empire table>tfoot>tr>th, 
+.sheet-rolltemplate-fragged_empire table>thead>tr>td, 
+.sheet-rolltemplate-fragged_empire table>tbody>tr>td, 
+.sheet-rolltemplate-fragged_empire table>tfoot>tr>td {
+    padding: 1px;
+    border: none; 
+}
+.sheet-rolltemplate-fragged_empire table {
+    width: 100%;
+    line-height: 1.2em;
+    font-size: 1em;
+    border-collapse: separate;
+    border: solid black 1px;
+    margin: 0px;
+}
+.sheet-rolltemplate-fragged_empire th {
+    background-color: #2F4858;
+    color: #F6AE2D;
+    padding: 2px;
+    line-height: 1.2em;
+    font-size: 1.5em;
+    font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+    font-variant: small-caps;
+    border-top: none;
+    text-align: center;
+}
+.sheet-rolltemplate-fragged_empire .sheet-subheader {
+    background-color: #2F4858;
+    color: #F6AE2D;
+    line-height: 0.9em;
+    font-size: 0.9em;
+    font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+    font-style: italic;
+    text-align: left;
+    border: none;
+}
+.sheet-rolltemplate-fragged_empire .sheet-subfooter {
+    background-color: #2F4858;
+    color: #F6AE2D;
+    line-height: 0.9em;
+    font-size: 0.9em;
+    font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+    font-style: italic;
+    font-weight: bold;
+    text-align: right;
+}
+.sheet-rolltemplate-fragged_empire .sheet-tcat {
+    text-align: left;
+    font-variant: small-caps;
+}
+.sheet-rolltemplate-fragged_empire td {
+    padding: 5px;
+    border: 1px solid black;
+    /*text-align: right;*/
+    /*text-align: left;*/
+}
+.sheet-rolltemplate-fragged_empire tr:nth-child(odd) {
+    /*background-color: #33658A;*/
+    background-color: #73A5CA;
+}
+.sheet-rolltemplate-fragged_empire tr:nth-child(even) {
+    background-color: #86BBD8;
+}
+.sheet-rolltemplate-fragged_empire .inlinerollresult {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: black;
+}
+.sheet-rolltemplate-fragged_empire .sheet-subfooter .inlinerollresult {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: black;
+}
+.sheet-rolltemplate-fragged_empire .inlinerollresult.fullcrit {
+    background-color: transparent;
+    color: black;
+}
+.sheet-rolltemplate-fragged_empire .inlinerollresult.fullfail {
+    background-color: transparent;
+    color: black;
+}
+.sheet-rolltemplate-fragged_empire .inlinerollresult.importantroll {
+    background-color: transparent;
+    color: black;
+}
+.sheet-rolltemplate-fragged_empire .sheet-damageoutput .inlinerollresult.fullcrit,
+.sheet-rolltemplate-fragged_empire .sheet-damageoutput .inlinerollresult.fullfail,
+.sheet-rolltemplate-fragged_empire .sheet-damageoutput .inlinerollresult.importantroll {
+    display: inline-block;
+    min-width: 1.5em;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: black;
+}
+.sheet-rolltemplate-fragged_empire div {
+    width: 100%;
+    max-width: 400px;
 }
