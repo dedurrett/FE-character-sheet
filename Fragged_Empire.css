@@ -34,13 +34,12 @@ input[type=radio].sheet-styleNotes + span{
     color: #888888;
     text-align:left;
 }
-/* Color Template:
+/* Color Pallete:
     #86BBD8 Dark Sky Blue   #73A5CA #608FBC #4D79AE
     #33658A Teal Blue
     #2F4858 Dark Slate Gray
     #F6AE2D Saffron
     #F26419 Giant's Orange
-
 */
 input[type=radio].sheet-styleCharacter:checked ~ .sheet-character{
     background: linear-gradient(#33658A, #DBDCDE, #E0E7ED, white);
@@ -184,6 +183,7 @@ input[type="number"]{
     text-align: center;
 }
 
+/*------------------------------*/
 .sheet-fillerz
 {
     opacity: 0;
@@ -209,6 +209,26 @@ input.sheet-fillerx[type="radio"]
     margin: -10px;
     cursor: pointer;
     z-index: 1;
+}
+
+/* Roll Button */
+button[type="roll"]{
+    align-items: left;
+    color: black;
+    font-weight: normal;
+    font-size: 20px;
+    text-decoration:none;
+    background:none;
+    background-image:none;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+}
+button[type="roll"]:hover{
+    font-weight: bold;
 }
 
 /* Fake radio */
@@ -239,6 +259,47 @@ input.sheet-fillerx[type="radio"] + span::before
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
+}
+input.sheet-wb[type="radio"] + span::before,
+input.sheet-ws[type="radio"] + span::before,
+input.sheet-dws[type="radio"] + span::before,
+input.sheet-cargo1[type="radio"] + span::before,
+input.sheet-cargo2[type="radio"] + span::before,
+input.sheet-cargo3[type="radio"] + span::before,
+input.sheet-cargo4[type="radio"] + span::before
+{
+    font-size: 0.6em;
+    font-weight: bold;
+    border: none;
+    background: none;
+}
+input.sheet-wb[type="radio"] + span::before
+{
+    content: "Wb" !important;
+}
+input.sheet-ws[type="radio"] + span::before
+{
+    content: "Ws" !important;
+}
+input.sheet-dws[type="radio"] + span::before
+{
+    content: "D Ws" !important;
+}
+input.sheet-cargo1[type="radio"] + span::before
+{
+    content: "1" !important;
+}
+input.sheet-cargo2[type="radio"] + span::before
+{
+    content: "2" !important;
+}
+input.sheet-cargo3[type="radio"] + span::before
+{
+    content: "3" !important;
+}
+input.sheet-cargo4[type="radio"] + span::before
+{
+    content: "4" !important;
 }
 input.sheet-zero[type="radio"] + span::before
 {
