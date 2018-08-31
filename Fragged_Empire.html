@@ -12,20 +12,20 @@
                 <table align="left" width="1005">
                     <tr>
                         <td style="text-align: left;"><div class="sheet-header"><span data-i18n="char_name">Character Name</span></div></td>
-                        <td><input type="text" name="attr_char_name"/></td>
+                        <td><input type="text" name="attr_character_name"/></td>
                     </tr>
                     <tr>
                         <td style="text-align: left;"><div class="sheet-header"><span data-i18n="char_race">Races</span></div></td>
-                        <td><input type="text" name="attr_char_race"/></td>
+                        <td><input type="text" name="attr_race"/></td>
                     </tr>
                     <tr>
                         <td style="text-align: left;"><div class="sheet-header"><span data-i18n="char_language">Languages</span></div></td>
-                        <td><input type="text" name="attr_char_lang" value="Corp"/></td>
+                        <td><input type="text" name="attr_language" value="Corp"/></td>
                     </tr>
                 </table>
             </div>
             <div class="sheet-col"> <!-- Column 2 -->
-                <div style="text-align: center;"><img src="http://i.imgur.com/qS5vXEL.png" alt="Fragged Empire"></div>
+                <div style="margin: -12px 0 0 0; text-align: center;"><img src="https://raw.githubusercontent.com/dedurrett/FE-character-sheet/master/Fragged%20Empire%20Logo.png" alt="Fragged Empire"></div>
             </div>
         </div>
         <hr />
@@ -48,58 +48,115 @@
                         <tr> <!-- Level -->
                             <td><div class="sheet-strong"><span data-i18n="char_level">Level</span></div></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><input type="number" name="attr_char_level" min="1" max="20" value="2"/></td>
+                            <td colspan="2">
+                                <input class="sheet-filler sheet-zero" type="radio" name="attr_levelup" value=0 checked><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_levelup" value=1><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_levelup" value=2><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_levelup" value=3><span></span>
+                            </td>
+                            <td><input type="number" name="attr_level" min="1" max="20" value="1"/></td>
                             <td><input type="text" name="attr_level_trait"/></td>
                         </tr>
                         <tr> <!-- Max Resources -->
                             <td><div class="sheet-strong"><span data-i18n="char_max_ressources">Max Resources</span></div></td>
                             <td><div class="sheet-small-right">Lvl + 2 +</div></td>
-                            <td><input type="number" name="attr_mod_res" value="0"></td>
+                            <td><input type="number" name="attr_resources_mod" value="0"></td>
                             <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_max_res" value="2+@{mod_res}+@{char_level}" disabled="true" /></td>
-                            <td><input type="text" name="attr_res_trait"/></td>
+                            <td><input type="number" name="attr_resources_max" value="3" readonly/></td>
+                            <td><input type="text" name="attr_resources_trait"/></td>
                         </tr>
                         <tr> <!-- Max Influence -->
                             <td><div class="sheet-strong"><span data-i18n="char_max_influence">Max Influence</span></div></td>
                             <td><div class="sheet-small-right">Lvl + 2 +</div></td>
-                            <td><input type="number" name="attr_mod_inf" value="0"></td>
+                            <td><input type="number" name="attr_influence_mod" value="0"></td>
                             <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_max_inf" value="2+@{mod_inf}+@{char_level}" disabled="true" /></td>
-                            <td><input type="text" name="attr_inf_trait"/></td>
+                            <td><input type="number" name="attr_influence_max" value="3" readonly/></td>
+                            <td><input type="text" name="attr_influence_trait"/></td>
                         </tr>
                     </tbody>
                 </table>
             </div> <!-- End Column 1 -->
             <div class="sheet-col"> <!-- Column 2 -->
                 <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th style="text-align: left;"><span data-i18n="char_current">Current</span></th>
-                            <th></th>
-                            <th style="text-align: left;"><span data-i18n="char_allocated">Allocated</span></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr> <!-- Current Resources -->
                             <td><div class="sheet-strong"><span data-i18n="char_ressources">Resources</span></div></td>
-                            <td><input type="number" name="attr_cur_res" min="0" value="0"/></td>
-                            <td></td>
-                            <td><input type="number" name="attr_all_res" min="0" value="0"/></td>
+                            <td>
+                                <span class="sheet-fillerz">xxxxx</span>
+                                <input class="sheet-filler sheet-zero" type="radio" name="attr_resources" value=0 checked><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=1><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=2><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=3><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=4><span></span>
+                                <input class="sheet-fillerx sheet-five" type="radio" name="attr_resources" value=5><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=6><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=7><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=8><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=9><span></span>
+                                <input class="sheet-fillerx sheet-ten" type="radio" name="attr_resources" value=10><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=11><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=12><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=13><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=14><span></span>
+                                <input class="sheet-fillerx sheet-fifteen" type="radio" name="attr_resources" value=15><span></span>
+                                <br/>
+                                <span class="sheet-fillerz">xxxxxxxx</span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=16><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=17><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=18><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=19><span></span>
+                                <input class="sheet-fillerx sheet-twenty" type="radio" name="attr_resources" value=20><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=21><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=22><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=23><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=24><span></span>
+                                <input class="sheet-fillerx sheet-twentyfive" type="radio" name="attr_resources" value=25><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=26><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=27><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=28><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_resources" value=29><span></span>
+                                <input class="sheet-fillerx sheet-thirty" type="radio" name="attr_resources" value=30><span></span>
+                            </td>
                         </tr>
+                        <tr><td><br/></td></tr>
                         <tr> <!-- Current Influence -->
                             <td><div class="sheet-strong"><span data-i18n="char_influence">Influence</span></div></td>
-                            <td><input type="number" name="attr_cur_inf" min="0" value="0"/></td>
-                            <td></td>
-                            <td><input type="number" name="attr_all_inf" min="0" value="0"/></td>
-                        </tr>
-                        <tr> <!-- Spare Time Rolls -->
-                            <td><div class="sheet-strong"><span data-i18n="char_spare_time_points">Spare Time Points</span></div></td>
-                            <td><input type="number" name="attr_cur_spare_time" min="0" max="10" value="0"/></td>
-                            <td><div class="sheet-strong"><span data-i18n="char_spare_time_roll">Spare Time Roll</span></div></td>
-                            <td><input type="number" name="spare_time_mod" value="0"/></td>
+                            <td>
+                                <span class="sheet-fillerz">xxxxx</span>
+                                <input class="sheet-filler sheet-zero" type="radio" name="attr_influence" value=0 checked><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=1><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=2><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=3><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=4><span></span>
+                                <input class="sheet-fillerx sheet-five" type="radio" name="attr_influence" value=5><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=6><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=7><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=8><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=9><span></span>
+                                <input class="sheet-fillerx sheet-ten" type="radio" name="attr_influence" value=10><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=11><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=12><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=13><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=14><span></span>
+                                <input class="sheet-fillerx sheet-fifteen" type="radio" name="attr_influence" value=15><span></span>
+                                <br/>
+                                <span class="sheet-fillerz">xxxxxxxx</span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=16><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=17><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=18><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=19><span></span>
+                                <input class="sheet-fillerx sheet-twenty" type="radio" name="attr_influence" value=20><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=21><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=22><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=23><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=24><span></span>
+                                <input class="sheet-fillerx sheet-twentyfive" type="radio" name="attr_influence" value=25><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=26><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=27><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=28><span></span>
+                                <input class="sheet-filler" type="radio" name="attr_influence" value=29><span></span>
+                                <input class="sheet-fillerx sheet-thirty" type="radio" name="attr_influence" value=30><span></span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -125,57 +182,57 @@
                         <tr> <!-- Strength -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_strength">Strength</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_str" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_strength" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_str" min="0" value="3"/></td>
-                            <td><input type="text" name="attr_str_trait"/></td>
+                            <td><input type="number" name="attr_strength_max" min="0" value="3"/></td>
+                            <td><input type="text" name="attr_strength_trait"/></td>
                         </tr>
                         <tr> <!-- Reflexes -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_reflexes">Reflexes</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_ref" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_reflexes" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_ref" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_reflexes_max" min="0" value="3"/></td>
                             <td><input type="text" name="attr_ref_trait"/></td>
                         </tr>
                         <tr> <!-- Movement -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_movement">Movement</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_mov" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_movement" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_mov}" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_movement_max" min="0" value="3"/></td>
                             <td><input type="text" name="attr_mov_trait"/></td>
                         </tr>
                         <tr> <!-- Focus -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_focus">Focus</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_foc" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_focus" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_foc}" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_focus_max" min="0" value="3"/></td>
                             <td><input type="text" name="attr_foc_trait"/></td>
                         </tr>
                         <tr> <!-- Intelligence -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_intelligence">Intelligence</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_int" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_intelligence" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_int" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_intelligence_max" min="0" value="3"/></td>
                             <td><input type="text" name="attr_int_trait"/></td>
                         </tr>
                         <tr> <!-- Perception -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_perception">Perception</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_per" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_perception" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_per" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_perception_max" min="0" value="3"/></td>
                             <td><input type="text" name="attr_per_traits"/></td>
                         </tr>
                         <tr> <!-- Fate -->
-                            <td><div class="sheet-strong"><span data-i18n="atr_fate">Fate</span></div></td>
-                            <td><div class="sheet-small-right">2 +</div></td>
-                            <td><input type="number" name="attr_mod_fate" value="0"></td>
-                            <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_max_fate" value="2+@{mod_fate}" disabled="true" /></td>
+                            <td><div class="sheet-fate"><span data-i18n="atr_fate">Fate</span></div></td>
+                            <td></td>
+                            <td><input type="number" name="attr_fate" value="0"></td>
+                            <td><div class="sheet-small-center">/</div></td>
+                            <td><input type="number" name="attr_fate_max" readonly/></td>
                             <td><input type="text" name="attr_fate_trait"/></td>
                         </tr>
                     </tbody>
@@ -184,12 +241,30 @@
             <div class="sheet-col"> <!-- Column 2 -->
                 <div> <!-- Perks/Complications -->
                     <div class="sheet-strong"><span data-i18n="char_perks">Perks</span></div>
-                    <div>
-                    	<textarea style="height: 40px; width: 470px;" name="attr_perk1"></textarea>
+                    <div class="sheet-auto-expand">
+                    	<span name="attr_perk1"></span>
+                    	<textarea style="width: 470px;" spellcheck="false" name="attr_perk1"></textarea>
                     </div>
                     <div class="sheet-strong"><span data-i18n="char_complications">Complications</span></div>
+                    <div class="sheet-auto-expand">
+                    	<span name="attr_comp1"></span>
+                    	<textarea style="width: 470px;" spellcheck="false" name="attr_comp1"></textarea>
+                    </div>
+                    <br/>
                     <div>
-                           <textarea style="height: 40px; width: 470px;" name="attr_comp1"></textarea>
+                        <span class="sheet-strong" data-i18n="char_spare_time_points">Spare Time Points</span>
+                        <span class="sheet-fillerz">xxxxx</span>
+                        <input class="sheet-filler sheet-zero" type="radio" name="attr_sparetime" value=0 checked><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=1><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=2><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=3><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=4><span></span>
+                        <input class="sheet-fillerx sheet-five" type="radio" name="attr_sparetime" value=5><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=6><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=7><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=8><span></span>
+                        <input class="sheet-filler" type="radio" name="attr_sparetime" value=9><span></span>
+                        <input class="sheet-fillerx sheet-ten" type="radio" name="attr_sparetime" value=10><span></span>
                     </div>
                 </div> <!-- End Perks/Complications -->
             </div>
@@ -203,8 +278,9 @@
                     <thead>
                         <tr>
                             <th style="text-align: left;"><span data-i18n="ps_trained">Trained</span></th>
-                            <th style="text-align: left;"><span data-i18n="ps_everyday_skills">Everyday Skills</span></th>
+                            <th style="text-align: left;"><span data-i18n="ps_everyday_skills">Everyday</span></th>
                             <th style="text-align: left;"><span data-i18n="ps_mod">Modifier</span></th>
+                            <th style="text-align: left;"><span data-i18n="ps_total">Total</span></th>
                             <th style="text-align: left;"><span data-i18n="ps_traits">Traits</span></th>
                             <th style="text-align: center;"></th>
                             <th style="text-align: center;"><span data-i18n="ps_tb">TB</span></th>
@@ -216,89 +292,106 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasWealth' value="1"/></td>
                             <td><span data-i18n="ps_wealth">Wealth</span></td>
-                            <td><input name='attr_wealth' type="number" value="-2"/></td>
+                            <td><input name='attr_wealth_mod' type="number" value="0"/></td>
+                            <td><input name='attr_wealth' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_wealth_trait"/></td>
-                            <td></td>
-                            <td><input type="checkbox"/></td>
-                            <td><input type="checkbox"/></td>
-                            <td><input type="checkbox"/></td>
+                            <td><button type="roll" value="&{template:fragged_empire} {{charname=@{character_name}}} {{rollname=Wealth Roll}} {{skillroll=[[3d6m+@{wealth}[Skill]+(?{Description Bonus|0})[Description]]]}} @{WealthTools}" name="roll_wealthSkill" title="Wealth Roll"></button></td>
+                            <td><input type="checkbox" name='attr_HasWealthTB' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasWealthWk' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasWealthDW' value="2"/></td>
+                            <input type="hidden" name="attr_WealthTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasConversation' value="1"/></td>
                             <td><span data-i18n="ps_conversation">Conversation</span></td>
-                            <td><input name='attr_conversation' type="number" value="-2"/></td>
+                            <td><input name='attr_conversation_mod' type="number" value="0"/></td>
+                            <td><input name='attr_conversation' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_conversation_trait"/></td>
-                            <td></td>
+                            <td><button type="roll" value="&{template:fragged_empire} {{charname=@{character_name}}} {{rollname=Conversation Roll}} {{skillroll=[[3d6m+@{conversation}[Skill]+(?{Description Bonus|0})[Description]]]}} @{ConvTools}" name="roll_ConvSkill" title="Conversation Roll"></button></td>
                             <td><input type="checkbox" name='attr_HasConvTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasConvWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasConvDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasConvDW' value="2"/></td>
+                            <input type="hidden" name="attr_ConvTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasLeadership' value="1"/></td>
                             <td><span data-i18n="ps_leadership">Leadership</span></td>
-                            <td><input name='attr_leadership' type="number" value="-2"/></td>
+                            <td><input name='attr_leadership_mod' type="number" value="0"/></td>
+                            <td><input name='attr_leadership' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_leadership_trait"/></td>
-                            <td></td>
+                            <td><button type="roll" value="&{template:fragged_empire} {{charname=@{character_name}}} {{rollname=Leadership Roll}} {{skillroll=[[3d6m+@{leadership}[Skill]+(?{Description Bonus|0})[Description]]]}} @{LeadTools}" name="roll_LeadSkill" title="Leadership Roll"></button></td>
                             <td><input type="checkbox" name='attr_HasLeadTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasLeadWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasLeadDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasLeadDW' value="2"/></td>
+                            <input type="hidden" name="attr_LeadTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasCulture' value="1"/></td>
                             <td><span data-i18n="ps_culture">Culture</span></td>
-                            <td><input name='attr_culture' type="number" value="-2"/></td>
+                            <td><input name='attr_culture_mod' type="number" value="0"/></td>
+                            <td><input name='attr_culture' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_culture_trait"/></td>
                             <td></td>
                             <td><input type="checkbox" name='attr_HasCultTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasCultWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasCultDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasCultDW' value="2"/></td>
+                            <input type="hidden" name="attr_CultTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasPhysical' value="1"/></td>
                             <td><span data-i18n="ps_physical">Physical</span></td>
-                            <td><input name='attr_physical' type="number" value="-2"/></td>
+                            <td><input name='attr_physical_mod' type="number" value="0"/></td>
+                            <td><input name='attr_physical' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_physical_trait"/></td>
                             <td></td>
                             <td><input type="checkbox" name='attr_HasPhysTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasPhysWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasPhysDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasPhysDW' value="2"/></td>
+                            <input type="hidden" name="attr_PhysTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasResolve' value="1"/></td>
                             <td><span data-i18n="ps_resolve">Resolve</span></td>
-                            <td><input name='attr_resolve' type="number" value="-2"/></td>
+                            <td><input name='attr_resolve_mod' type="number" value="0"/></td>
+                            <td><input name='attr_resolve' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_resolve_trait"/></td>
                             <td></td>
                             <td><input type="checkbox" name='attr_HasResolTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasResolWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasResolDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasResolDW' value="2"/></td>
+                            <input type="hidden" name="attr_ResolTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasAwareness' value="1"/></td>
                             <td><span data-i18n="ps_awareness">Awareness</span></td>
-                            <td><input name='attr_awareness' type="number" value="-2"/></td>
+                            <td><input name='attr_awareness_mod' type="number" value="0"/></td>
+                            <td><input name='attr_awareness' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_awareness_trait"/></td>
                             <td></td>
                             <td><input type="checkbox" name='attr_HasAwareTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasAwareWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasAwareDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasAwareDW' value="2"/></td>
+                            <input type="hidden" name="attr_AwareTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasSurvival' value="1"/></td>
                             <td><span data-i18n="ps_survival">Survival</span></td>
-                            <td><input name='attr_survival' type="number" value="-2"/></td>
+                            <td><input name='attr_survival_mod' type="number" value="0"/></td>
+                            <td><input name='attr_survival' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_survival_trait"/></td>
                             <td></td>
                             <td><input type="checkbox" name='attr_HasSurvTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasSurvWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasSurvDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasSurvDW' value="2"/></td>
+                            <input type="hidden" name="attr_SurvTools" value="0" readonly>
                         </tr>
                     </tbody>
                     <thead>
                         <tr>
                             <th style="text-align: left;"><span data-i18n="pro_trained">Trained</span></th>
-                            <th style="text-align: left;"><span data-i18n="pro_ps">Professional Skills</span></th>
+                            <th style="text-align: left;"><span data-i18n="pro_ps">Professional</span></th>
                             <th style="text-align: left;"><span data-i18n="pro_mod">Modifier</span></th>
+                            <th style="text-align: left;"><span data-i18n="pro_total">Total</span></th>
                             <th style="text-align: left;"><span data-i18n="pro_traits">Traits</span></th>
                             <th style="text-align: center;"><span data-i18n="pro_tk">TK</span></th>
                             <th style="text-align: center;"><span data-i18n="pro_tb">TB</span></th>
@@ -310,82 +403,98 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasMechanics' value="1"/></td>
                             <td><span data-i18n="pro_mechanics">Mechanics</span></td>
-                            <td><input name='attr_mechanics' type="number" value="-2"/></td>
+                            <td><input name='attr_mechanics_mod' type="number" value="0"/></td>
+                            <td><input name='attr_mechanics' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_mechanics_trait"/></td>
                             <td><input type="checkbox" name='attr_HasMechTK' value="1"/></td>
                             <td><input type="checkbox"name='attr_HasMechTB' value="1"/></td>
                             <td><input type="checkbox"name='attr_HasMechWk' value="1"/></td>
-                            <td><input type="checkbox"name='attr_HasMechDW' value="1"/></td>
+                            <td><input type="checkbox"name='attr_HasMechDW' value="2"/></td>
+                            <input type="hidden" name="attr_MechTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasElectronics' value="1"/></td>
                             <td><span data-i18n="pro_electronics">Electronics</span></td>
-                            <td><input name='attr_electronics' type="number" value="-2"/></td>
+                            <td><input name='attr_electronics_mod' type="number" value="0"/></td>
+                            <td><input name='attr_electronics' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_electronics_trait"/></td>
                             <td><input type="checkbox" name='attr_HasElecTK' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasElecTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasElecWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasElecDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasElecDW' value="2"/></td>
+                            <input type="hidden" name="attr_ElecTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasProgramming' value="1"/></td>
                             <td><span data-i18n="pro_programming">Programming</span></td>
-                            <td><input name='attr_programming' type="number" value="-2"/></td>
+                            <td><input name='attr_programming_mod' type="number" value="0"/></td>
+                            <td><input name='attr_programming' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_programming_trait"/></td>
                             <td><input type="checkbox" name='attr_HasProgTK' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasProgTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasProgWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasProgDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasProgDW' value="2"/></td>
+                            <input type="hidden" name="attr_ProgTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasBiotech' value="1"/></td>
                             <td><span data-i18n="pro_bio_tech">Bio Tech</span></td>
-                            <td><input name='attr_biotech' type="number" value="-2"/></td>
+                            <td><input name='attr_biotech_mod' type="number" value="0"/></td>
+                            <td><input name='attr_biotech' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_biotech_trait"/></td>
                             <td><input type="checkbox" name='attr_HasBioTK' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasBioTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasBioWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasBioDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasBioDW' value="2"/></td>
+                            <input type="hidden" name="attr_BioTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasMedicine' value="1"/></td>
                             <td><span data-i18n="pro_medicine">Medicine</span></td>
-                            <td><input name='attr_medicine' type="number" value="-2"/></td>
+                            <td><input name='attr_medicine_mod' type="number" value="0"/></td>
+                            <td><input name='attr_medicine' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_medicine_trait"/></td>
                             <td><input type="checkbox" name='attr_HasMedTK' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasMedTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasMedWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasMedDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasMedDW' value="2"/></td>
+                            <input type="hidden" name="attr_MedTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasPsychology' value="1"/></td>
                             <td><span data-i18n="pro_psychology">Psychology</span></td>
-                            <td><input name='attr_psychology' type="number" value="-2"/></td>
+                            <td><input name='attr_psychology_mod' type="number" value="0"/></td>
+                            <td><input name='attr_psychology' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_psychology_trait"/></td>
                             <td><input type="checkbox" name='attr_HasPsyTK' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasPsyTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasPsyWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasPsyDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasPsyDW' value="2"/></td>
+                            <input type="hidden" name="attr_PsyTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasAstronomy' value="1"/></td>
                             <td><span data-i18n="pro_astronomy">Astronomy</span></td>
-                            <td><input name='attr_astronomy' type="number" value="-2"/></td>
+                            <td><input name='attr_astronomy_mod' type="number" value="0"/></td>
+                            <td><input name='attr_astronomy' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_astronomy_trait"/></td>
                             <td><input type="checkbox" name='attr_HasAstrTK' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasAstrTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasAstrWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasAstrDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasAstrDW' value="2"/></td>
+                            <input type="hidden" name="attr_AstrTools" value="0" readonly>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name='attr_HasPlanetoids' value="1"/></td>
                             <td><span data-i18n="pro_planetoids">Planetoids</span></td>
-                            <td><input name='attr_planetoids' type="number" value="-2"/></td>
+                            <td><input name='attr_planetoids_mod' type="number" value="0"/></td>
+                            <td><input name='attr_planetoids' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_planetoids_trait"/></td>
                             <td><input type="checkbox" name='attr_HasPlanTK' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasPlanTB' value="1"/></td>
                             <td><input type="checkbox" name='attr_HasPlanWk' value="1"/></td>
-                            <td><input type="checkbox" name='attr_HasPlanDW' value="1"/></td>
+                            <td><input type="checkbox" name='attr_HasPlanDW' value="2"/></td>
+                            <input type="hidden" name="attr_PlanTools" value="0" readonly>
                         </tr>
                     </tbody>
                 </table>
@@ -395,8 +504,9 @@
                     <thead>
                         <tr>
                             <th style="text-align: left;"><span data-i18n="pcs_trained">Trained</span></th>
-                            <th style="text-align: left;"><span data-i18n="pcs_pcs">Personal Combat Skills</span></th>
+                            <th style="text-align: left;"><span data-i18n="pcs_pcs">Personal Combat</span></th>
                             <th style="text-align: left;"><span data-i18n="pcs_mod">Modifier</span></th>
+                            <th style="text-align: left;"><span data-i18n="pcs_total">Total</span></th>
                             <th style="text-align: left;"><span data-i18n="pcs_traits">Traits x2</span></th>
                         </tr>
                     </thead>
@@ -404,10 +514,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasSmallArms' value="1"/></td>
                             <td><span data-i18n="pcs_small_arms">Small Arms</span></td>
-                            <td><input name='attr_smallarms' type="number" value="-2"/></td>
+                            <td><input name='attr_smallarms_mod' type="number" value="0"/></td>
+                            <td><input name='attr_smallarms' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_small_arms_trait1"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -416,10 +528,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasHeavyArms' value="1"/></td>
                             <td><span data-i18n="pcs_heavy_arms">Heavy Arms</span></td>
-                            <td><input name='attr_heavyarms' type="number" value="-2"/></td>
+                            <td><input name='attr_heavyarms_mod' type="number" value="0"/></td>
+                            <td><input name='attr_heavyarms' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_heavy_arms_trait1"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -428,10 +542,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasTactical' value="1"/></td>
                             <td><span data-i18n="pcs_tactical">Tactical</span></td>
-                            <td><input name='attr_tactical' type="number" value="-2"/></td>
+                            <td><input name='attr_tactical_mod' type="number" value="0"/></td>
+                            <td><input name='attr_tactical' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_tactical_trait1"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -440,10 +556,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasExotic' value="1"/></td>
                             <td><span data-i18n="pcs_exotic">Exotic</span></td>
-                            <td><input name='attr_exotic' type="number" value="-2"/></td>
+                            <td><input name='attr_exotic_mod' type="number" value="0"/></td>
+                            <td><input name='attr_exotic' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_exotic_trait1"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -453,8 +571,9 @@
                     <thead>
                         <tr>
                             <th style="text-align: left;"><span data-i18n="vss_trained">Trained</span></th>
-                            <th style="text-align: left;"><span data-i18n="vss_vss">Vehicle System Skills</span></th>
+                            <th style="text-align: left;"><span data-i18n="vss_vss">Vehicle System</span></th>
                             <th style="text-align: left;"><span data-i18n="vss_mod">Modifier</span></th>
+                            <th style="text-align: left;"><span data-i18n="vss_total">Total</span></th>
                             <th style="text-align: left;"><span data-i18n="vss_traits">Traits x2</span></th>
                         </tr>
                     </thead>
@@ -462,10 +581,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasCommand' value="1"/></td>
                             <td><span data-i18n="vss_command">Command</span></td>
-                            <td><input name='attr_command' type="number" value="-2"/></td>
+                            <td><input name='attr_command_mod' type="number" value="0"/></td>
+                            <td><input name='attr_command' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_command_arms_trait"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -474,10 +595,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasEngineering' value="1"/></td>
                             <td><span data-i18n="vss_engineering">Engineering</span></td>
-                            <td><input name='attr_engineering' type="number" value="-2"/></td>
+                            <td><input name='attr_engineering_mod' type="number" value="0"/></td>
+                            <td><input name='attr_engineering' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_engineering_trait"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -486,10 +609,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasOperations' value="1"/></td>
                             <td><span data-i18n="vss_operations">Operations</span></td>
-                            <td><input name='attr_operations' type="number" value="-2"/></td>
+                            <td><input name='attr_operations_mod' type="number" value="0"/></td>
+                            <td><input name='attr_operations' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_operations_trait"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -498,10 +623,12 @@
                         <tr>
                             <td><input type="checkbox" name='attr_HasGunnery' value="1"/></td>
                             <td><span data-i18n="vss_gunnery">Gunnery</span></td>
-                            <td><input name='attr_gunnery' type="number" value="-2"/></td>
+                            <td><input name='attr_gunnery_mod' type="number" value="0"/></td>
+                            <td><input name='attr_gunnery' type="number" value="-2" readonly/></td>
                             <td><input type="text" name="attr_gunnery_trait"/></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -518,6 +645,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th style="text-align: left;"><span data-i18n="sh_rollbtn">Roll</span></th>
                         <th style="text-align: left;"><span data-i18n="sh_strong_hit">Strong Hit</span></th>
                         <th style="text-align: left;"><span data-i18n="sh_requirement">Requirement</span></th>
                         <th style="text-align: left;"><span data-i18n="sh_result">Result</span></th>
@@ -525,18 +653,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><textarea name="attr_skill_hit1" style="height: 30px; width: 200px;" data-i18n-placeholder="s1_skill_efford_hit" placeholder="Effort"></textarea></td>
-                        <td><textarea name="attr_skill_req1" style="height: 30px; width: 300px;" data-i18n-placeholder="s1_skill_efford_req" placeholder="Primary or Vehicle System Skill"/></textarea></td>
-                        <td><textarea name="attr_skill_res1" style="height: 30px; width: 400px;" data-i18n-placeholder="s1_skill_efford_res" placeholder="You may re-roll a single die"/></textarea></td>
+                        <td><button type="roll" value="&{template:fragged_empire} {{charname=@{character_name}}} {{stronghit=@{skill_hit1}}} {{requirement=@{skill_req1}}} {{result=@{skill_res1}}}" name="roll_strongHit" title="Strong Hit"></button></td>
+                        <td><input type="text" name="attr_skill_hit1" style="height: 30px; width: 200px;" data-i18n-placeholder="s1_skill_efford_hit" placeholder="Effort"/></td>
+                        <td><input type="text" name="attr_skill_req1" style="height: 30px; width: 300px;" data-i18n-placeholder="s1_skill_efford_req" placeholder="Primary or Vehicle System Skill"/></td>
+                        <td><input type="text" name="attr_skill_res1" style="height: 30px; width: 400px;" data-i18n-placeholder="s1_skill_efford_res" placeholder="You may re-roll a single die"/></td>
                     </tr>
                 </tbody>
             </table>
             <fieldset class="repeating_skill_strong_hits">
                 <table>
                     <tr>
-                        <td><textarea name="attr_skill_hit2" style="height: 30px; width: 200px;"></textarea></td>
-                        <td><textarea name="attr_skill_req2" style="height: 30px; width: 300px;"></textarea></td>
-                        <td><textarea name="attr_skill_res2" style="height: 30px; width: 400px;"></textarea></td>
+                        <td><td><button type="roll" value="&{template:fragged_empire} {{charname=@{character_name}}} {{stronghit=@{skill_hit2}}} {{requirement=@{skill_req2}}} {{result=@{skill_res2}}}" name="roll_strongHit" title="Strong Hit"></button></td></td>
+                        <td><input type="text" name="attr_skill_hit2" style="height: 30px; width: 200px;"/></td>
+                        <td><input type="text" name="attr_skill_req2" style="height: 30px; width: 300px;"/></td>
+                        <td><input type="text" name="attr_skill_res2" style="height: 30px; width: 400px;"/></td>
                     </tr>
                 </table>
             </fieldset>
@@ -615,20 +745,20 @@
                 <table align="left" width="1005">
                     <tr>
                         <td style="text-align: left;"><div class="sheet-header"><span data-i18n="s2_charname">Character Name</span></div></td>
-                        <td><input type="text" name="attr_char_name"/></td>
+                        <td><input type="text" name="attr_character_name"/></td>
                     </tr>
                     <tr>
                         <td style="text-align: left;"><div class="sheet-header"><span data-i18n="s2_race">Races</span></div></td>
-                        <td><input type="text" name="attr_char_race"/></td>
+                        <td><input type="text" name="attr_race"/></td>
                     </tr>
                     <tr>
                         <td style="text-align: left;"><div class="sheet-header"><span data-i18n="s2_languages">Languages</span></div></td>
-                        <td><input type="text" name="attr_char_lang" value="Corp"/></td>
+                        <td><input type="text" name="attr_language" value="Corp"/></td>
                     </tr>
                 </table>
             </div>
             <div class="sheet-col"> <!-- Column 2 -->
-                <div style="text-align: center;"><img src="http://i.imgur.com/FtUW8BU.png" alt="Fragged Empire"></div>
+                <div style="margin: -12px 0 0 0; text-align: center;"><img src="https://raw.githubusercontent.com/dedurrett/FE-character-sheet/master/Fragged%20Empire%20Logo.png" alt="Fragged Empire"></div>
             </div>
         </div>
         <hr />
@@ -651,57 +781,57 @@
                         <tr> <!-- Strength -->
                             <td><div class="sheet-attributes"><span data-i18n="s2_atr_strength">Strength</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_str" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_strength" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_str" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_strength_max" min="0" value="3"/></td>
                             <td style='text-align: left;'><input type='text' name='attr_damage_effects_1'/></td>
                         </tr>
                         <tr> <!-- Reflexes -->
                             <td><div class="sheet-attributes"><span data-i18n="s2_atr_reflexes">Reflexes</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_ref" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_reflexes" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_ref" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_reflexes_max" min="0" value="3"/></td>
                             <td style='text-align: left;'><input type='text' name='attr_damage_effects_2'/></td>
                         </tr>
                         <tr> <!-- Movement -->
                             <td><div class="sheet-attributes"><span data-i18n="s2_atr_movement">Movement</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_mov" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_movement" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_mov}" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_movement_max" min="0" value="3"/></td>
                             <td style='text-align: left;'><input type='text' name='attr_damage_effects_3'/></td>
                         </tr>
                         <tr> <!-- Focus -->
                             <td><div class="sheet-attributes"><span data-i18n="s2_atr_focus">Focus</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_foc" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_focus" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_foc}" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_focus_max" min="0" value="3"/></td>
                             <td style='text-align: left;'><input type='text' name='attr_damage_effects_4'/></td>
                         </tr>
                         <tr> <!-- Intelligence -->
                             <td><div class="sheet-attributes"><span data-i18n="s2_atr_intelligence">Intelligence</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_int" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_intelligence" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_int" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_intelligence_max" min="0" value="3"/></td>
                             <td style='text-align: left;'><input type='text' name='attr_damage_effects_5'/></td>
                         </tr>
                         <tr> <!-- Perception -->
                             <td><div class="sheet-attributes"><span data-i18n="s2_atr_perception">Perception</span></div></td>
                             <td></td>
-                            <td><input type="number" name="attr_cur_per" min="-5" value="3"/></td>
+                            <td><input type="number" name="attr_perception" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_per" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_perception_max" min="0" value="3"/></td>
                             <td style='text-align: left;'><input type='text' name='attr_damage_effects_6'/></td>
                         </tr>
                         <tr> <!-- Fate -->
-                            <td><div class="sheet-strong"><span data-i18n="s2_atr_fate">Fate</span></div></td>
-                            <td><div class="sheet-small-right">2 +</div></td>
-                            <td><input type="number" name="attr_mod_fate" value="0"></td>
-                            <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_max_fate" value="2+@{mod_fate}" disabled="true" /></td>
+                            <td><div class="sheet-fate"><span data-i18n="s2_atr_fate">Fate</span></div></td>
+                            <td></td>
+                            <td><input type="number" name="attr_fate" value="0"></td>
+                            <td><div class="sheet-small-center">/</div></td>
+                            <td><input type="number" name="attr_fate_max" readonly/></td>
                         </tr>
                     </tbody>
                 </table> <!-- End Attributes -->
@@ -716,7 +846,7 @@
                             <td><div class="sheet-small-right"><span data-i18n="s2_end_mod">Mod:</span></div></td>
                             <td><input type="number" name="attr_cur_mod" min="0" value="0"/></td>
                             <td><div class="sheet-small-right"><span data-i18n="s2_end_max">Max:</span></div></td>
-                            <td><input type="number" name="attr_max_end" min="0" value="@{max_str}*5+10+@{cur_mod}+@{outfit_endurance}+@{utility_endurance}" disabled="true"/></td>
+                            <td><input type="number" name="attr_max_end" min="0" value="@{strength_max}*5+10+@{cur_mod}+@{outfit_endurance}+@{utility_endurance}" disabled="true"/></td>
                         </tr>
                         <tr>
                             <td><div class="sheet-attributes"><span data-i18n="s2_recovery">Recovery</span></div></td>
@@ -725,7 +855,7 @@
                             <td></td>
                             <td></td>
                             <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_order" value="@{cur_foc}+@{mod_rec}" disabled="true"/></td>
+                            <td><input type="number" name="attr_order" value="@{focus}+@{mod_rec}" disabled="true"/></td>
                         </tr>
                         <tr>
                             <td><div class="sheet-attributes"><span data-i18n="s2_order">Order</span></div></td>
@@ -734,7 +864,7 @@
                             <td></td>
                             <td></td>
                             <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_order" value="@{cur_int}+@{mod_order}" disabled="true"/></td>
+                            <td><input type="number" name="attr_order" value="@{intelligence}+@{mod_order}" disabled="true"/></td>
                         </tr>
                         <tr>
                             <td><div class="sheet-attributes"><span data-i18n="s2_stealth">Stealth</span></div></td>
@@ -743,7 +873,7 @@
                             <td></td>
                             <td></td>
                             <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_stealth" value="@{cur_ref}+@{tactical}+@{mod_stealth}" disabled="true" /></td>
+                            <td><input type="number" name="attr_stealth" value="@{reflexes}+@{tactical}+@{mod_stealth}" disabled="true" /></td>
                         </tr>
                     </table>
                     <hr/>
@@ -780,7 +910,7 @@
                         <td><div class="sheet-small-right"><span data-i18n="s2_defence_calculation">10 + Ref + Equip +</span></div></td>
                         <td><input type="number" name="attr_mod_defence" value="0"></td>
                         <td><div class="sheet-small-center">=</div></td>
-                        <td><input type="number" name="attr_defence" value="10+@{cur_ref}+@{mod_defence}+@{outfit_defence}+@{utility_defence}-@{defence_penalty}" disabled="true" /></td>
+                        <td><input type="number" name="attr_defence" value="10+@{reflexes}+@{mod_defence}+@{outfit_defence}+@{utility_defence}-@{defence_penalty}" disabled="true" /></td>
                     </tr>
                     <tr>
                         <th style="text-align: right;"><span data-i18n="s2_cover_steps">Cover Steps: </span></th>
@@ -794,21 +924,21 @@
                         <td><div class="sheet-small-right"><span data-i18n="s2_def_impair_calc">Def + Str +</span></div></td>
                         <td><input type="number" name="attr_mod_imp_defence" value="0"></td>
                         <td><div class="sheet-small-center">=</div></td>
-                        <td><input type="number" name="attr_imp_defence" value="@{defence}+@{cur_str}+@{mod_imp_defence}" disabled="true" /></td>
+                        <td><input type="number" name="attr_imp_defence" value="@{defence}+@{strength}+@{mod_imp_defence}" disabled="true" /></td>
                     </tr>
                     <tr>
                         <th style="text-align: right;"><span data-i18n="s2_def_psionic">vs Psionic: </span></th>
                         <td><div class="sheet-small-right"><span data-i18n="s2_def_psionic_calc">Def + Foc +</span></div></td>
                         <td><input type="number" name="attr_mod_psi_defence" value="0"></td>
                         <td><div class="sheet-small-center">=</div></td>
-                        <td><input type="number" name="attr_psi_defence" value="@{defence}+@{cur_foc}+@{mod_psi_defence}" disabled="true" /></td>
+                        <td><input type="number" name="attr_psi_defence" value="@{defence}+@{focus}+@{mod_psi_defence}" disabled="true" /></td>
                     </tr>
                     <tr>
                         <th style="text-align: right;"><span data-i18n="s2_def_stealth">vs Stealth: </span></th>
                         <td><div class="sheet-small-right"><span data-i18n="s2_def_stealth_calc">10 + Per +</span></div></td>
                         <td><input type="number" name="attr_mod_stealth_defence" value="0"></td>
                         <td><div class="sheet-small-center">=</div></td>
-                        <td><input type="number" name="attr_stealth_defence" value="10+@{cur_per}+@{mod_stealth_defence}" disabled="true" /></td>
+                        <td><input type="number" name="attr_stealth_defence" value="10+@{perception}+@{mod_stealth_defence}" disabled="true" /></td>
                     </tr>
                 </table> <!-- End Defence -->
             </div>
@@ -920,10 +1050,10 @@
                 </tr>
                 <tr>
                     <td><input type="text" data-i18n-placeholder="s2_nw_mind" placeholder="Mind" disabled="true"></td>
-                    <td><input type="number" name="attr_mind_hit" value="@{cur_int}+@{tactical}" disabled="true" /></td>
+                    <td><input type="number" name="attr_mind_hit" value="@{intelligence}+@{tactical}" disabled="true" /></td>
                     <td><input type="number" value="-" disabled="true"></td>
                     <td><input type="number" value="-" disabled="true"></td>
-                    <td><input type="number" name="attr_mind_range" value="@{cur_foc}" disabled="true" /></td>
+                    <td><input type="number" name="attr_mind_range" value="@{focus}" disabled="true" /></td>
                     <td><input type="number" value="-" disabled="true"></td>
                     <td><input type="number" value="-" disabled="true"></td>
                     <td><input type="number" value="0" disabled="true"></td>
@@ -935,8 +1065,8 @@
                 <tr>
                     <td><input type="text" data-i18n-placeholder="s2_nw_limbs" placeholder="Limbs" disabled="true"></td>
                     <td><input type="number" name="attr_limb_hit" value="@{exotic}" disabled="true" /></td>
-                    <td><input type="number" name="attr_limb_end_dmg" value="@{cur_str}-1" disabled="true" /></td>
-                    <td><input type="number" name="attr_limb_crit_dmg" value="@{cur_str}-2" disabled="true" /></td>
+                    <td><input type="number" name="attr_limb_end_dmg" value="@{strength}-1" disabled="true" /></td>
+                    <td><input type="number" name="attr_limb_crit_dmg" value="@{strength}-2" disabled="true" /></td>
                     <td><input type="number" value="-" disabled="true"></td>
                     <td><input type="number" value="-" disabled="true"></td>
                     <td><input type="number" value="-" disabled="true"></td>
@@ -1200,12 +1330,12 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;"><div class="sheet-header"><span data-i18n="s3_influence_cost">Influence Cost</span></div></td>
-                        <td><input type="number" name="attr_ship_inf_cost"/></td>
+                        <td><input type="text" name="attr_ship_inf_cost"/></td>
                     </tr>
                 </table>
             </div>
             <div class="sheet-col"> <!-- Column 2 -->
-                <div style="text-align: center;"><img src="http://i.imgur.com/FtUW8BU.png" alt="Fragged Empire"></div>
+                <div style="margin: -12px 0 0 0; text-align: center;"><img src="https://raw.githubusercontent.com/dedurrett/FE-character-sheet/master/Fragged%20Empire%20Logo.png" alt="Fragged Empire"></div>
             </div>
         </div>
         <hr />
@@ -1216,7 +1346,7 @@
                 <table> <!-- Attributes -->
                     <thead>
                         <tr>
-                            <th style="text-align: left;"><span data-i18n="s3_attributes">Attributes</span></th>
+                            <th colspan="2" style="text-align: left;"><span data-i18n="s3_attributes">Attributes</span></th>
                             <th></th>
                             <th style="text-align: left;"><span data-i18n="s3_atr_current">Cur</span></th>
                             <th></th>
@@ -1227,7 +1357,7 @@
                     </thead>
                     <tbody>
                         <tr> <!-- Hull -->
-                            <td><div class="sheet-attributes"><span data-i18n="s3_hull">Hull</span></div></td>
+                            <td colspan="2"><div class="sheet-attributes"><span data-i18n="s3_hull">Hull</span></div></td>
                             <td></td>
                             <td><input type="number" name="attr_cur_hul" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
@@ -1236,7 +1366,7 @@
                             <td style='text-align: left;'><input type='text' style="width: 120px;" name='attr_ship_effects_1'/></td>
                         </tr>
                         <tr> <!-- Engines -->
-                            <td><div class="sheet-attributes"><span data-i18n="s3_engines">Engines</span></div></td>
+                            <td colspan="2"><div class="sheet-attributes"><span data-i18n="s3_engines">Engines</span></div></td>
                             <td></td>
                             <td><input type="number" name="attr_cur_eng" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
@@ -1245,25 +1375,25 @@
                             <td style='text-align: left;'><input type='text' style="width: 120px;" name='attr_ship_effects_2'/></td>
                         </tr>
                         <tr> <!-- Crew -->
-                            <td><div class="sheet-attributes"><span data-i18n="s3_crew">Crew</span></div></td>
+                            <td colspan="2"><div class="sheet-attributes"><span data-i18n="s3_crew">Crew</span></div></td>
                             <td></td>
                             <td><input type="number" name="attr_cur_crew" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_crew}" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_max_crew" min="0" value="3"/></td>
                             <td><input type="text" style="width: 120px;" name="attr_cre_trait"/></td>
                             <td style='text-align: left;'><input type='text' style="width: 120px;" name='attr_ship_effects_3'/></td>
                         </tr>
                         <tr> <!-- Power -->
-                            <td><div class="sheet-attributes"><span data-i18n="s3_power">Power</span></div></td>
+                            <td colspan="2"><div class="sheet-attributes"><span data-i18n="s3_power">Power</span></div></td>
                             <td></td>
                             <td><input type="number" name="attr_cur_pow" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_max_pow}" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_max_pow" min="0" value="3"/></td>
                             <td><input type="text" style="width: 120px;" name="attr_pow_trait"/></td>
                             <td style='text-align: left;'><input type='text' style="width: 120px;" name='attr_ship_effects_4'/></td>
                         </tr>
                         <tr> <!-- CPU -->
-                            <td><div class="sheet-attributes"><span data-i18n="s3_cpu">CPU</span></div></td>
+                            <td colspan="2"><div class="sheet-attributes"><span data-i18n="s3_cpu">CPU</span></div></td>
                             <td></td>
                             <td><input type="number" name="attr_cur_cpu" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
@@ -1272,7 +1402,7 @@
                             <td style='text-align: left;'><input type='text' style="width: 120px;" name='attr_ship_effects_5'/></td>
                         </tr>
                         <tr> <!-- Sensors -->
-                            <td><div class="sheet-attributes"><span data-i18n="s3_sensors">Sensors</span></div></td>
+                            <td colspan="2"><div class="sheet-attributes"><span data-i18n="s3_sensors">Sensors</span></div></td>
                             <td></td>
                             <td><input type="number" name="attr_cur_sen" min="-5" value="3"/></td>
                             <td><div class="sheet-small-center">/</div></td>
@@ -1281,11 +1411,11 @@
                             <td style='text-align: left;'><input type='text' style="width: 120px;" name='attr_ship_effects_6'/></td>
                         </tr>
                         <tr> <!-- Size -->
-                            <td><div class="sheet-strong"><span data-i18n="s3_size">Size</span></div></td>
-                            <td><div class="sheet-small-right">3 +</div></td>
-                            <td><input type="number" name="attr_mod_size" value="0"></td>
-                            <td><div class="sheet-small-center">=</div></td>
-                            <td><input type="number" name="attr_max_size" value="3+@{mod_size}" disabled="true" /></td>
+                            <td colspan="2"><div class="sheet-fate"><span data-i18n="s3_size">Size</span></div></td>
+                            <td></td>
+                            <td></td><!--<input type="number" name="attr_size_mod" value="0">-->
+                            <td></td>
+                            <td><input type="number" name="attr_size" value="3+@{mod_size}" disabled="true" /></td>
                             <td><input type="text" style="width: 120px;" name="attr_siz_trait"/></td>
                         </tr>
                     </tbody>
@@ -1738,16 +1868,24 @@
                 </table>
             </div>
             <div class="sheet-col"> <!-- Column 2 -->
-                <div style="text-align: center;"><img src="http://i.imgur.com/FtUW8BU.png" alt="Fragged Empire"></div>
+                <div style="margin: -12px 0 0 0; text-align: center;"><img src="https://raw.githubusercontent.com/dedurrett/FE-character-sheet/master/Fragged%20Empire%20Logo.png" alt="Fragged Empire"></div>
             </div>
         </div>
         <hr />
     </div> <!-- End Header -->
+    <div class="notes"> <!-- Background Notes -->
+       <div align="center"> 
+       		<div class="sheet-attributes"><span data-i18n="s4_notes1">Character Background</span></div>
+            <br />
+			<textarea style="width:800px; height:400px" name="attr_background_notes"></textarea>
+       </div>
+       <hr />
+    </div> <!-- End Background Notes -->
     <div class="notes"> <!-- General Notes -->
        <div align="center"> 
-       		<div class="sheet-attributes"><span data-i18n="s4_notes">General Notes</span></div>
+       		<div class="sheet-attributes"><span data-i18n="s4_notes2">General Notes</span></div>
             <br />
-			<textarea style="width:800px; height:400px" name="general_notes"></textarea>
+			<textarea style="width:800px; height:400px" name="attr_general_notes"></textarea>
        </div>
        <hr />
     </div> <!-- End General Notes -->
@@ -1760,3 +1898,646 @@
        <hr />
     </div> <!-- End General Notes -->
 </div>
+
+<!-- Templates -->
+<rolltemplate class="sheet-rolltemplate-fragged_empire">
+    <table>
+        {{#skillroll}}
+            <tr><td colspan="2" class="sheet-subheader">{{toolkits}}</td></tr>
+            <tr><th colspan="2">{{charname}}</th></tr>
+            <tr><th colspan="2">{{rollname}}</th></tr>
+            <tr><td><span class="sheet-tcat">Result: </span></td><td class="sheet-results">{{skillroll}}</td></tr>
+            {{#rollWasCrit() skillroll}}
+                    <tr><td colspan="2" class="sheet-subfooter"><b>Strong Hit!</b></td></tr>
+            {{/rollWasCrit() skillroll}}
+        {{/skillroll}}
+        {{#stronghit}}
+            <tr><td colspan="2" class="sheet-subheader">Strong Hit</td></tr>
+            <tr><th colspan="2">{{charname}}</th></tr>
+            <tr><th colspan="2">{{stronghit}}</th></tr>
+            <tr><td><span class="sheet-tcat">Requirement: </span></td><td class="sheet-results">{{requirement}}</td></tr>
+            <tr><td><span class="sheet-tcat">Result: </span></td><td class="sheet-results">{{result}}</td></tr>
+        {{/stronghit}}
+    </table>
+</rolltemplate>
+
+<!-- Sheet workers -->
+<script type="text/worker">
+
+on('change:levelup', function() { // Increment Level after 3 advances
+    getAttrs(["levelup", "level"], function(values) {
+        if (parseInt(values.levelup)===3) {
+            setAttrs({
+                level: parseInt(values.level)+1,
+                levelup: 0
+            });
+        }
+    });
+});
+
+on('change:race change:level change:resources_mod change:resources', function() { // Calculate Max Resources
+    var racialMod = 0;
+    getAttrs(["race","level","resources_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                racialMod = 2;
+                break;
+            default:
+        }
+        setAttrs({
+            resources_max: 2+parseInt(values.level)+parseInt(values.resources_mod)+racialMod
+        });
+    });
+    getAttrs(["resources_max","resources"], function(values) {
+        if (parseInt(values.resources) > parseInt(values.resources_max)) {
+            setAttrs({
+                resources: parseInt(values.resources_max)
+            }); 
+        }
+    });
+});
+
+on('change:race change:level change:influence_mod change:influence', function() { // Calculate Max Influence
+    var racialMod = 0;
+    getAttrs(["race","level","influence_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                racialMod = 2;
+                break;
+            case "AUGMENT":
+                racialMod = -1;
+                break;
+            default:
+        }
+        setAttrs({
+            influence_max: 2+parseInt(values.level)+parseInt(values.influence_mod)+racialMod
+        });
+    });
+    getAttrs(["influence_max","influence"], function(values) {
+        if (parseInt(values.influence) > parseInt(values.influence_max)) {
+            setAttrs({
+                influence: parseInt(values.influence_max)
+            }); 
+        }
+    });
+});
+
+on('change:race', function() { // Calculate Max Fate
+    var racialMod = 0;
+    getAttrs(["race"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                racialMod = -1;
+                break;
+            case "KALTORAN":
+                racialMod = 1;
+                break;
+            case "AUGMENT":
+                racialMod = -1;
+                break;
+            default:
+        }
+        setAttrs({
+            fate_max: 2+racialMod
+        });
+    });
+});
+
+on('change:race change:wealth_mod change:HasWealth change:HasWealthTB change:HasWealthWk change:HasWealthDW', function() { // Calculate Wealth Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","wealth_mod","HasWealth","HasWealthTB","HasWealthWk","HasWealthDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                racialMod = 1;
+                break;
+            case "KALTORAN":
+                racialMod = -1;
+                break;
+            case "AUGMENT":
+                racialMod = -2;
+                break;
+            default:
+        }
+        if (values.HasWealthTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasWealthWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasWealthDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            wealth: untrained+racialMod+parseInt(values.wealth_mod)+(parseInt(values.HasWealth)*(-(untrained-1)))+Math.max(parseInt(values.HasWealthTB),parseInt(values.HasWealthDW)),
+            WealthTools: myTools
+        });
+    });
+});
+
+on('change:race change:conversation_mod change:HasConversation change:HasConvTB change:HasConvWk change:HasConvDW', function() { // Calculate Conversation Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","conversation_mod","HasConversation","HasConvTB","HasConvWk","HasConvDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "NEPHILIM":
+                racialMod = -1;
+                break;
+            case "AUGMENT":
+                racialMod = -2;
+                break;
+            default:
+        }
+        if (values.HasConvTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasConvWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasConvDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            conversation: untrained+racialMod+parseInt(values.conversation_mod)+(parseInt(values.HasConversation)*(-(untrained-1)))+Math.max(parseInt(values.HasConvTB),parseInt(values.HasConvDW)),
+            ConvTools: myTools
+        });
+    });
+});
+
+on('change:race change:leadership_mod change:HasLeadership change:HasLeadTB change:HasLeadWk change:HasLeadDW', function() { // Calculate Leadership Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","leadership_mod","HasLeadership","HasLeadTB","HasLeadWk","HasLeadDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            default:
+        }
+        if (values.HasLeadTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasLeadWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasLeadDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            leadership: untrained+racialMod+parseInt(values.leadership_mod)+(parseInt(values.HasLeadership)*(-(untrained-1)))+Math.max(parseInt(values.HasLeadTB),parseInt(values.HasLeadDW)),
+            LeadTools: myTools
+        });
+    });
+});
+
+on('change:race change:culture_mod change:HasCulture change:HasCultTB change:HasCultWk change:HasCultDW', function() { // Calculate Culture Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","culture_mod","HasCulture","HasCultTB","HasCultWk","HasCultDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "NEPHILIM":
+		        racialMod = -2;
+                break;
+            default:
+        }
+        if (values.HasCultTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasCultWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasCultDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            culture: untrained+racialMod+parseInt(values.culture_mod)+(parseInt(values.HasCulture)*(-(untrained-1)))+Math.max(parseInt(values.HasCultTB),parseInt(values.HasCultDW)),
+            CultTools: myTools
+        });
+    });
+});
+
+on('change:race change:physical_mod change:HasPhysical change:HasPhysTB change:HasPhysWk change:HasPhysDW', function() { // Calculate Physical Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","physical_mod","HasPhysical","HasPhysTB","HasPhysWk","HasPhysDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "ZHOU":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasPhysTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasPhysWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasPhysDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            physical: untrained+racialMod+parseInt(values.physical_mod)+(parseInt(values.HasPhysical)*(-(untrained-1)))+Math.max(parseInt(values.HasPhysTB),parseInt(values.HasPhysDW)),
+            PhysTools: myTools
+        });
+    });
+});
+
+on('change:race change:resolve_mod change:HasResolve change:HasResolTB change:HasResolWk change:HasResolDW', function() { // Calculate Resolve Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","resolve_mod","HasResolve","HasResolTB","HasResolWk","HasResolDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "LEGION":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasResolTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasResolWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasResolDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            resolve: untrained+racialMod+parseInt(values.resolve_mod)+(parseInt(values.HasResolve)*(-(untrained-1)))+Math.max(parseInt(values.HasResolTB),parseInt(values.HasResolDW)),
+            ResolTools: myTools
+        });
+    });
+});
+
+on('change:race change:awareness_mod change:HasAwareness change:HasAwareTB change:HasAwareWk change:HasAwareDW', function() { // Calculate Awareness Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","awareness_mod","HasAwareness","HasAwareTB","HasAwareWk","HasAwareDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasAwareTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasAwareWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasAwareDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            awareness: untrained+racialMod+parseInt(values.awareness_mod)+(parseInt(values.HasAwareness)*(-(untrained-1)))+Math.max(parseInt(values.HasAwareTB),parseInt(values.HasAwareDW)),
+            AwareTools: myTools
+        });
+    });
+});
+
+on('change:race change:survival_mod change:HasSurvival change:HasSurvTB change:HasSurvWk change:HasSurvDW', function() { // Calculate Survival Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","survival_mod","HasSurvival","HasSurvTB","HasSurvWk","HasSurvDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "ZHOU":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasSurvTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasSurvWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasSurvDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            survival: untrained+racialMod+parseInt(values.survival_mod)+(parseInt(values.HasSurvival)*(-(untrained-1)))+Math.max(parseInt(values.HasSurvTB),parseInt(values.HasSurvDW)),
+            SurvTools: myTools
+        });
+    });
+});
+
+on('change:race change:mechanics_mod change:HasMechanics change:HasMechTK change:HasMechTB change:HasMechWk change:HasMechDW', function() { // Calculate Mechanics Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","mechanics_mod","HasMechanics","HasMechTK","HasMechTB","HasMechWk","HasMechDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            default:
+        }
+        if (values.HasMechTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasMechTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasMechWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasMechDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            mechanics: untrained+racialMod+parseInt(values.mechanics_mod)+(parseInt(values.HasMechanics)*(-(untrained-1)))+Math.max(parseInt(values.HasMechTB),parseInt(values.HasMechDW)),
+            MechTools: myTools
+        });
+    });
+});
+
+on('change:race change:electronics_mod change:HasElectronics change:HasElecTK change:HasElecTB change:HasElecWk change:HasElecDW', function() { // Calculate Electronics Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","electronics_mod","HasElectronics","HasElecTK","HasElecTB","HasElecWk","HasElecDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "ZHOU":
+                racialMod = -2;
+                break;
+            case "AUGMENT":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasElecTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasElecTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasElecWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasElecDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            electronics: untrained+racialMod+parseInt(values.electronics_mod)+(parseInt(values.HasElectronics)*(-(untrained-1)))+Math.max(parseInt(values.HasElecTB),parseInt(values.HasElecDW)),
+            ElecTools: myTools
+        });
+    });
+});
+
+on('change:race change:programming_mod change:HasProgramming change:HasProgTK change:HasProgTB change:HasProgWk change:HasProgDW', function() { // Calculate Programming Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","programming_mod","HasProgramming","HasProgTK","HasProgTB","HasProgWk","HasProgDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "PALANTOR":
+                racialMod = 1;
+                break;
+            case "ZHOU":
+                racialMod = -2;
+                break;
+            default:
+        }
+        if (values.HasProgTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasProgTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasProgWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasProgDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            programming: untrained+racialMod+parseInt(values.programming_mod)+(parseInt(values.HasProgramming)*(-(untrained-1)))+Math.max(parseInt(values.HasProgTB),parseInt(values.HasProgDW)),
+            ProgTools: myTools
+        });
+    });
+});
+
+on('change:race change:biotech_mod change:HasBiotech change:HasBioTK change:HasBioTB change:HasBioWk change:HasBioDW', function() { // Calculate Biotech Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","biotech_mod","HasBiotech","HasBioTK","HasBioTB","HasBioWk","HasBioDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "NEPHILIM":
+                racialMod = 1;
+                break;
+            case "AUGMENT":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasBioTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasBioTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasBioWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasBioDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            biotech: untrained+racialMod+parseInt(values.biotech_mod)+(parseInt(values.HasBiotech)*(-(untrained-1)))+Math.max(parseInt(values.HasBioTB),parseInt(values.HasBioDW)),
+            BioTools: myTools
+        });
+    });
+});
+
+on('change:race change:medicine_mod change:HasMedicine change:HasMedTK change:HasMedTB change:HasMedWk change:HasMedDW', function() { // Calculate Medicine Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","medicine_mod","HasMedicine","HasMedTK","HasMedTB","HasMedWk","HasMedDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "PALANTOR":
+                racialMod = -2;
+                break;
+            case "AUGMENT":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasMedTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasMedTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasMedWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasMedDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            medicine: untrained+racialMod+parseInt(values.medicine_mod)+(parseInt(values.HasMedicine)*(-(untrained-1)))+Math.max(parseInt(values.HasMedTB),parseInt(values.HasMedDW)),
+            MedTools: myTools
+        });
+    });
+});
+
+on('change:race change:psychology_mod change:HasPsychology change:HasPsyTK change:HasPsyTB change:HasPsyWk change:HasPsyDW', function() { // Calculate Psychology Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","psychology_mod","HasPsychology","HasPsyTK","HasPsyTB","HasPsyWk","HasPsyDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "REMNANT":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasPsyTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasPsyTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasPsyWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasPsyDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            psychology: untrained+racialMod+parseInt(values.psychology_mod)+(parseInt(values.HasPsychology)*(-(untrained-1)))+Math.max(parseInt(values.HasPsyTB),parseInt(values.HasPsyDW)),
+            PsyTools: myTools
+        });
+    });
+});
+
+on('change:race change:astronomy_mod change:HasAstronomy change:HasAstrTK change:HasAstrTB change:HasAstrWk change:HasAstrDW', function() { // Calculate Astronomy Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","astronomy_mod","HasAstronomy","HasAstrTK","HasAstrTB","HasAstrWk","HasAstrDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            case "TWI-FAR":
+                racialMod = 1;
+                break;
+            default:
+        }
+        if (values.HasAstrTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasAstrTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasAstrWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasAstrDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            astronomy: untrained+racialMod+parseInt(values.astronomy_mod)+(parseInt(values.HasAstronomy)*(-(untrained-1)))+Math.max(parseInt(values.HasAstrTB),parseInt(values.HasAstrDW)),
+            AstrTools: myTools
+        });
+    });
+});
+
+on('change:race change:planetoids_mod change:HasPlanetoids change:HasPlanTK change:HasPlanTB change:HasPlanWk change:HasPlanDW', function() { // Calculate Planetoids Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    var myTools = "0";
+    getAttrs(["race","planetoids_mod","HasPlanetoids","HasPlanTK","HasPlanTB","HasPlanWk","HasPlanDW"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                untrained = -1;
+                break;
+            default:
+        }
+        if (values.HasPlanTK > 0) myTools = "{{toolkits=Toolkit}}";
+        if (values.HasPlanTB > 0) myTools = "{{toolkits=Toolbox}}";
+        if (values.HasPlanWk > 0) myTools = "{{toolkits=Workshop}}";
+        if (values.HasPlanDW > 0) myTools = "{{toolkits=Dedicated Workshop}}";
+        setAttrs({
+            planetoids: untrained+racialMod+parseInt(values.planetoids_mod)+(parseInt(values.HasPlanetoids)*(-(untrained-1)))+Math.max(parseInt(values.HasPlanTB),parseInt(values.HasPlanDW)),
+            PlanTools: myTools
+        });
+    });
+});
+
+on('change:race change:smallarms_mod change:HasSmallArms', function() { // Calculate SmallArms Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","smallarms_mod","HasSmallArms"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                racialMod = 1;
+                break;
+            case "REMNANT":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ smallarms: untrained+racialMod+parseInt(values.smallarms_mod)+(parseInt(values.HasSmallArms)*(-(untrained-1))) });
+    });
+});
+
+on('change:race change:heavyarms_mod change:HasHeavyArms', function() { // Calculate HeavyArms Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","heavyarms_mod","HasHeavyArms"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "LEGION":
+                racialMod = 1;
+                break;
+            case "TWI-FAR":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ heavyarms: untrained+racialMod+parseInt(values.heavyarms_mod)+(parseInt(values.HasHeavyArms)*(-(untrained-1))) });
+    });
+});
+
+on('change:race change:tactical_mod change:HasTactical', function() { // Calculate Tactical Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","tactical_mod","HasTactical"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                racialMod = 1;
+                break;
+            case "PALANTOR":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ tactical: untrained+racialMod+parseInt(values.tactical_mod)+(parseInt(values.HasTactical)*(-(untrained-1))) });
+    });
+});
+
+on('change:race change:exotic_mod change:HasExotic', function() { // Calculate Exotic Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","exotic_mod","HasExotic"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "NEPHILIM":
+                racialMod = 1;
+                break;
+            case "ZHOU":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ exotic: untrained+racialMod+parseInt(values.exotic_mod)+(parseInt(values.HasExotic)*(-(untrained-1))) });
+    });
+});
+
+on('change:race change:command_mod change:HasCommand', function() { // Calculate Command Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","command_mod","HasCommand"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "KALTORAN":
+                racialMod = 1;
+                break;
+            case "TWI-FAR":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ command: untrained+racialMod+parseInt(values.command_mod)+(parseInt(values.HasCommand)*(-(untrained-1))) });
+    });
+});
+
+on('change:race change:engineering_mod change:HasEngineering', function() { // Calculate Engineering Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","engineering_mod","HasEngineering"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "NEPHILIM":
+                racialMod = 1;
+                break;
+            case "PALANTOR":
+                racialMod = 1;
+                break;
+            case "AUGMENT":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ engineering: untrained+racialMod+parseInt(values.engineering_mod)+(parseInt(values.HasEngineering)*(-(untrained-1))) });
+    });
+});
+
+on('change:race change:operations_mod change:HasOperations', function() { // Calculate Operations Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","operations_mod","HasOperations"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                racialMod = 1;
+                break;
+            case "TWI-FAR":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ operations: untrained+racialMod+parseInt(values.operations_mod)+(parseInt(values.HasOperations)*(-(untrained-1))) });
+    });
+});
+
+on('change:race change:gunnery_mod change:HasGunnery', function() { // Calculate Gunnery Modifier
+    var untrained = -2;
+    var racialMod = 0;
+    getAttrs(["race","gunnery_mod","HasGunnery"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "LEGION":
+                racialMod = 1;
+                break;
+            case "REMNANT":
+                racialMod = 1;
+                break;
+            default:
+        }
+        setAttrs({ gunnery: untrained+racialMod+parseInt(values.gunnery_mod)+(parseInt(values.HasGunnery)*(-(untrained-1))) });
+    });
+});
+</script>
