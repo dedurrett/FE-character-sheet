@@ -171,9 +171,8 @@
                     <thead>
                         <tr>
                             <th style="text-align: left;"><span data-i18n="attributes">Attributes</span></th>
-                            <th></th>
-                            <th style="text-align: left;"><span data-i18n="atr_current">Cur</span></th>
-                            <th></th>
+                            <th style="text-align: left;"><span data-i18n="atr_assign">Assign</span></th>
+                            <th style="text-align: left;"><span data-i18n="atr_modifier">Modifier</span></th>
                             <th style="text-align: left;"><span data-i18n="atr_max">Max</span></th>
                             <th style="text-align: left;"><span data-i18n="atr_traits">Traits</span></th>
                         </tr>
@@ -181,58 +180,51 @@
                     <tbody>
                         <tr> <!-- Strength -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_strength">Strength</span></div></td>
-                            <td></td>
-                            <td><input type="number" name="attr_strength" min="-5" value="3"/></td>
-                            <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_strength_max" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_strength_assign" min="-0" value="2" max="5"/></td>
+                            <td><input type="number" name="attr_strength_mod" value="0"/></td>
+                            <td><input type="number" name="attr_strength_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_strength_trait"/></td>
                         </tr>
                         <tr> <!-- Reflexes -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_reflexes">Reflexes</span></div></td>
-                            <td></td>
-                            <td><input type="number" name="attr_reflexes" min="-5" value="3"/></td>
-                            <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_reflexes_max" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_reflexes_assign" min="-0" value="2" max="5"/></td>
+                            <td><input type="number" name="attr_reflexes_mod" value="0"/></td>
+                            <td><input type="number" name="attr_reflexes_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_ref_trait"/></td>
                         </tr>
                         <tr> <!-- Movement -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_movement">Movement</span></div></td>
-                            <td></td>
-                            <td><input type="number" name="attr_movement" min="-5" value="3"/></td>
-                            <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_movement_max" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_movement_assign" min="-0" value="2" max="5"/></td>
+                            <td><input type="number" name="attr_movement_mod" value="0"/></td>
+                            <td><input type="number" name="attr_movement_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_mov_trait"/></td>
                         </tr>
                         <tr> <!-- Focus -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_focus">Focus</span></div></td>
-                            <td></td>
-                            <td><input type="number" name="attr_focus" min="-5" value="3"/></td>
-                            <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_focus_max" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_focus_assign" min="-0" value="2" max="5"/></td>
+                            <td><input type="number" name="attr_focus_mod" value="0"/></td>
+                            <td><input type="number" name="attr_focus_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_foc_trait"/></td>
                         </tr>
                         <tr> <!-- Intelligence -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_intelligence">Intelligence</span></div></td>
-                            <td></td>
-                            <td><input type="number" name="attr_intelligence" min="-5" value="3"/></td>
-                            <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_intelligence_max" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_intelligence_assign" min="-0" value="2" max="5"/></td>
+                            <td><input type="number" name="attr_intelligence_mod" value="0"/></td>
+                            <td><input type="number" name="attr_intelligence_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_int_trait"/></td>
                         </tr>
                         <tr> <!-- Perception -->
                             <td><div class="sheet-attributes"><span data-i18n="atr_perception">Perception</span></div></td>
-                            <td></td>
-                            <td><input type="number" name="attr_perception" min="-5" value="3"/></td>
-                            <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_perception_max" min="0" value="3"/></td>
+                            <td><input type="number" name="attr_perception_assign" min="-0" value="2" max="5"/></td>
+                            <td><input type="number" name="attr_perception_mod" value="0"/></td>
+                            <td><input type="number" name="attr_perception_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_per_traits"/></td>
                         </tr>
                         <tr> <!-- Fate -->
                             <td><div class="sheet-fate"><span data-i18n="atr_fate">Fate</span></div></td>
-                            <td></td>
-                            <td><input type="number" name="attr_fate" value="0"></td>
-                            <td><div class="sheet-small-center">/</div></td>
-                            <td><input type="number" name="attr_fate_max" readonly/></td>
+                            <td><div class="sheet-fatex">x</span></td>
+                            <td><input type="number" name="attr_fate_mod" value="0"></td>
+                            <td><input type="number" name="attr_fate_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_fate_trait"/></td>
                         </tr>
                     </tbody>
@@ -2072,9 +2064,117 @@ on('change:race change:level change:influence_mod change:influence', function() 
     });
 });
 
-on('change:race', function() { // Calculate Max Fate
+on('change:race change:strength_assign change:strength_mod', function() { // Calculate Max Strength
     var racialMod = 0;
-    getAttrs(["race"], function(values) {
+    getAttrs(["race","strength_assign","strength_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                break;
+            case "KALTORAN":
+                break;
+            case "AUGMENT":
+                break;
+            default:
+        }
+        setAttrs({
+            strength_max: racialMod+parseInt(values.strength_assign)+parseInt(values.strength_mod)
+        });
+    });
+});
+
+on('change:race change:reflexes_assign change:reflexes_mod', function() { // Calculate Max Reflexes
+    var racialMod = 0;
+    getAttrs(["race","reflexes_assign","reflexes_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                break;
+            case "KALTORAN":
+                break;
+            case "AUGMENT":
+                break;
+            default:
+        }
+        setAttrs({
+            reflexes_max: racialMod+parseInt(values.reflexes_assign)+parseInt(values.reflexes_mod)
+        });
+    });
+});
+
+on('change:race change:movement_assign change:movement_mod', function() { // Calculate Max Movement
+    var racialMod = 0;
+    getAttrs(["race","movement_assign","movement_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                break;
+            case "KALTORAN":
+                break;
+            case "AUGMENT":
+                break;
+            default:
+        }
+        setAttrs({
+            movement_max: racialMod+parseInt(values.movement_assign)+parseInt(values.movement_mod)
+        });
+    });
+});
+
+on('change:race change:focus_assign change:focus_mod', function() { // Calculate Max Focus
+    var racialMod = 0;
+    getAttrs(["race","focus_assign","focus_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                break;
+            case "KALTORAN":
+                break;
+            case "AUGMENT":
+                break;
+            default:
+        }
+        setAttrs({
+            focus_max: racialMod+parseInt(values.focus_assign)+parseInt(values.focus_mod)
+        });
+    });
+});
+
+on('change:race change:intelligence_assign change:intelligence_mod', function() { // Calculate Max Intelligence
+    var racialMod = 0;
+    getAttrs(["race","intelligence_assign","intelligence_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                break;
+            case "KALTORAN":
+                break;
+            case "AUGMENT":
+                break;
+            default:
+        }
+        setAttrs({
+            intelligence_max: racialMod+parseInt(values.intelligence_assign)+parseInt(values.intelligence_mod)
+        });
+    });
+});
+
+on('change:race change:perception_assign change:perception_mod', function() { // Calculate Max Perception
+    var racialMod = 0;
+    getAttrs(["race","perception_assign","perception_mod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "CORPORATION":
+                break;
+            case "KALTORAN":
+                break;
+            case "AUGMENT":
+                break;
+            default:
+        }
+        setAttrs({
+            perception_max: racialMod+parseInt(values.perception_assign)+parseInt(values.perception_mod)
+        });
+    });
+});
+
+on('change:race change:fate_mod', function() { // Calculate Max Fate
+    var racialMod = 0;
+    getAttrs(["race","fate_mod"], function(values) {
         switch (values.race.toUpperCase()) {
             case "CORPORATION":
                 racialMod = -1;
@@ -2088,7 +2188,7 @@ on('change:race', function() { // Calculate Max Fate
             default:
         }
         setAttrs({
-            fate_max: 2+racialMod
+            fate_max: 2+racialMod+parseInt(values.fate_mod)
         });
     });
 });
