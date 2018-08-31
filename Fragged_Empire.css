@@ -162,6 +162,14 @@ input[type="number"]{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+.sheet-fatex{
+    color: #F6AE2D;
+    background: #F6AE2D;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 10px;
+    margin: 0px 0px 0px 0px;
+}
 .sheet-strong{
     color: #262626;
     background: transparent;
