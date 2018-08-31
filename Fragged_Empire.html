@@ -2069,10 +2069,8 @@ on('change:race change:strength_assign change:strength_mod', function() { // Cal
     getAttrs(["race","strength_assign","strength_mod"], function(values) {
         switch (values.race.toUpperCase()) {
             case "CORPORATION":
-                break;
-            case "KALTORAN":
-                break;
-            case "AUGMENT":
+            case "TWI-FAR":
+                racialMod = -2;
                 break;
             default:
         }
@@ -2086,12 +2084,6 @@ on('change:race change:reflexes_assign change:reflexes_mod', function() { // Cal
     var racialMod = 0;
     getAttrs(["race","reflexes_assign","reflexes_mod"], function(values) {
         switch (values.race.toUpperCase()) {
-            case "CORPORATION":
-                break;
-            case "KALTORAN":
-                break;
-            case "AUGMENT":
-                break;
             default:
         }
         setAttrs({
@@ -2104,7 +2096,8 @@ on('change:race change:movement_assign change:movement_mod', function() { // Cal
     var racialMod = 0;
     getAttrs(["race","movement_assign","movement_mod"], function(values) {
         switch (values.race.toUpperCase()) {
-            case "CORPORATION":
+            case "LEGION":
+                racialMod = -2;
                 break;
             case "KALTORAN":
                 break;
@@ -2122,11 +2115,8 @@ on('change:race change:focus_assign change:focus_mod', function() { // Calculate
     var racialMod = 0;
     getAttrs(["race","focus_assign","focus_mod"], function(values) {
         switch (values.race.toUpperCase()) {
-            case "CORPORATION":
-                break;
             case "KALTORAN":
-                break;
-            case "AUGMENT":
+                racialMod = -2;
                 break;
             default:
         }
@@ -2140,11 +2130,8 @@ on('change:race change:intelligence_assign change:intelligence_mod', function() 
     var racialMod = 0;
     getAttrs(["race","intelligence_assign","intelligence_mod"], function(values) {
         switch (values.race.toUpperCase()) {
-            case "CORPORATION":
-                break;
-            case "KALTORAN":
-                break;
-            case "AUGMENT":
+            case "PALANTOR":
+                racialMod = -2;
                 break;
             default:
         }
@@ -2158,12 +2145,6 @@ on('change:race change:perception_assign change:perception_mod', function() { //
     var racialMod = 0;
     getAttrs(["race","perception_assign","perception_mod"], function(values) {
         switch (values.race.toUpperCase()) {
-            case "CORPORATION":
-                break;
-            case "KALTORAN":
-                break;
-            case "AUGMENT":
-                break;
             default:
         }
         setAttrs({
@@ -2177,13 +2158,11 @@ on('change:race change:fate_mod', function() { // Calculate Max Fate
     getAttrs(["race","fate_mod"], function(values) {
         switch (values.race.toUpperCase()) {
             case "CORPORATION":
+            case "AUGMENT":
                 racialMod = -1;
                 break;
             case "KALTORAN":
                 racialMod = 1;
-                break;
-            case "AUGMENT":
-                racialMod = -1;
                 break;
             default:
         }
@@ -2227,10 +2206,8 @@ on('change:race change:conversation_mod change:HasConversation change:HasConvTB 
     getAttrs(["race","conversation_mod","HasConversation","HasConvTB","HasConvWk","HasConvDW"], function(values) {
         switch (values.race.toUpperCase()) {
             case "KALTORAN":
-                untrained = -1;
-                break;
             case "NEPHILIM":
-                racialMod = -1;
+                untrained = -1;
                 break;
             case "AUGMENT":
                 racialMod = -2;
@@ -2474,8 +2451,6 @@ on('change:race change:biotech_mod change:HasBiotech change:HasBioTK change:HasB
                 untrained = -1;
                 break;
             case "NEPHILIM":
-                racialMod = 1;
-                break;
             case "AUGMENT":
                 racialMod = 1;
                 break;
@@ -2598,8 +2573,6 @@ on('change:race change:smallarms_mod change:HasSmallArms', function() { // Calcu
     getAttrs(["race","smallarms_mod","HasSmallArms"], function(values) {
         switch (values.race.toUpperCase()) {
             case "KALTORAN":
-                racialMod = 1;
-                break;
             case "REMNANT":
                 racialMod = 1;
                 break;
@@ -2615,8 +2588,6 @@ on('change:race change:heavyarms_mod change:HasHeavyArms', function() { // Calcu
     getAttrs(["race","heavyarms_mod","HasHeavyArms"], function(values) {
         switch (values.race.toUpperCase()) {
             case "LEGION":
-                racialMod = 1;
-                break;
             case "TWI-FAR":
                 racialMod = 1;
                 break;
@@ -2632,8 +2603,6 @@ on('change:race change:tactical_mod change:HasTactical', function() { // Calcula
     getAttrs(["race","tactical_mod","HasTactical"], function(values) {
         switch (values.race.toUpperCase()) {
             case "CORPORATION":
-                racialMod = 1;
-                break;
             case "PALANTOR":
                 racialMod = 1;
                 break;
@@ -2649,9 +2618,9 @@ on('change:race change:exotic_mod change:HasExotic', function() { // Calculate E
     getAttrs(["race","exotic_mod","HasExotic"], function(values) {
         switch (values.race.toUpperCase()) {
             case "NEPHILIM":
+            case "ZHOU":
                 racialMod = 1;
                 break;
-            case "ZHOU":
                 racialMod = 1;
                 break;
             default:
@@ -2666,8 +2635,6 @@ on('change:race change:command_mod change:HasCommand', function() { // Calculate
     getAttrs(["race","command_mod","HasCommand"], function(values) {
         switch (values.race.toUpperCase()) {
             case "KALTORAN":
-                racialMod = 1;
-                break;
             case "TWI-FAR":
                 racialMod = 1;
                 break;
@@ -2683,11 +2650,7 @@ on('change:race change:engineering_mod change:HasEngineering', function() { // C
     getAttrs(["race","engineering_mod","HasEngineering"], function(values) {
         switch (values.race.toUpperCase()) {
             case "NEPHILIM":
-                racialMod = 1;
-                break;
             case "PALANTOR":
-                racialMod = 1;
-                break;
             case "AUGMENT":
                 racialMod = 1;
                 break;
@@ -2703,8 +2666,6 @@ on('change:race change:operations_mod change:HasOperations', function() { // Cal
     getAttrs(["race","operations_mod","HasOperations"], function(values) {
         switch (values.race.toUpperCase()) {
             case "CORPORATION":
-                racialMod = 1;
-                break;
             case "TWI-FAR":
                 racialMod = 1;
                 break;
@@ -2720,8 +2681,6 @@ on('change:race change:gunnery_mod change:HasGunnery', function() { // Calculate
     getAttrs(["race","gunnery_mod","HasGunnery"], function(values) {
         switch (values.race.toUpperCase()) {
             case "LEGION":
-                racialMod = 1;
-                break;
             case "REMNANT":
                 racialMod = 1;
                 break;
