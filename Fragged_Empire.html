@@ -258,6 +258,17 @@
                         <input class="sheet-filler" type="radio" name="attr_sparetime" value=9><span></span>
                         <input class="sheet-fillerx sheet-ten" type="radio" name="attr_sparetime" value=10><span></span>
                     </div>
+                    <div>
+                        <span class="sheet-strong" data-i18n="char_spare_time_roll">Spare Time Roll</span>
+                        <span class="sheet-fillerz">xxxxxxx</span>
+                        <span data-i18n="ps_mod">Modifier</span>
+                        <input type="number" name="attr_sparetime_rollmod" value="0"/>
+                        <span class="sheet-fillerz">xxxx</span>
+                        <span data-i18n="ps_total">Total</span>
+                        <input type="number" name="attr_sparetime_roll"  value="0" readonly/>
+                        <span class="sheet-fillerz">xx</span>
+                        <button type="roll" value="&{template:fragged_empire} {{charname=@{character_name}}} {{rollname=Spare Time Roll}} {{skillroll=[[3d6m+?{Skill Being Used|Spare Time,0|Wealth,@{wealth}|Conversation,@{conversation}|Leadership,@{leadership}|Culture,@{culture}|Physical,@{physical}|Resolve,@{resolve}|Awareness,@{awareness}|Survival,@{survival}|Mechanics,@{mechanics}|Engineering,@{engineering}|Programming,@{programming}|Bio Tech,@{biotech}|Medicine,@{medicine}|Psychology,@{psychology}|Astronomy,@{astronomy}|Planetoids,@{planetoids}|Small Arms,@{smallarms}|Heavy Arms,@{heavyarms}|Tactical,@{tactical}|Exotic,@{exotic}|Command,@{command}|Engineering,@{engineering}|Operations,@{operations}|Gunnery,@{gunnery}}[Skill]+(?{Description Bonus|0})[Description]+@{sparetime_roll}[Spare Time]]]}}" name="roll_spareTime" title="Spare Time Roll"></button>
+                    </div>
                 </div> <!-- End Perks/Complications -->
             </div>
         </div>
@@ -702,8 +713,8 @@
         <hr />
     </div> <!-- End Skill Strong Hits -->
     <div class="char_researchtrade">
-        <div class="sheet-2colrow"> <!-- Research/Trade Goods -->
-            <div class='sheet-col'> <!-- Research -->
+        <div class="sheet-2colrow" style="display: flex; justify-content: space-between;"> <!-- Research/Trade Goods -->
+            <div class='sheet-col' style="width: 47%;"> <!-- Research -->
                 <table>
                     <thead>
                         <tr>
@@ -756,10 +767,15 @@
                                 </td>
                             </tr>
                         </tbody>
+                        <tbody>
+                            <tr>
+                                <td><span class="sheet-fillerz">xxxxx</span></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </fieldset>
             </div> <!-- End Research -->
-            <div class='sheet-col'> <!-- Trade Goods -->
+            <div class='sheet-col' style="width: 46%;"> <!-- Trade Goods -->
                 <table> <!-- Trade Goods -->
                     <thead>
                         <tr>
@@ -810,6 +826,11 @@
                                     <input class="sheet-filler" type="radio" name="attr_trade_cargo4" value=3><span></span>
                                     <input class="sheet-filler" type="radio" name="attr_trade_cargo4" value=4><span></span>
                                 </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td><span class="sheet-fillerz">xxxxx</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -2168,6 +2189,24 @@ on('change:race change:fate_mod', function() { // Calculate Max Fate
         }
         setAttrs({
             fate_max: 2+racialMod+parseInt(values.fate_mod)
+        });
+    });
+});
+
+on('change:race change:sparetime_rollmod', function() { // Calculate Max Fate
+    var racialMod = 0;
+    getAttrs(["race","sparetime_rollmod"], function(values) {
+        switch (values.race.toUpperCase()) {
+            case "NEPHILIM":
+                racialMod = 1;
+                break;
+            case "REMNANT":
+                racialMod = -1;
+                break;
+            default:
+        }
+        setAttrs({
+            sparetime_roll: racialMod+parseInt(values.sparetime_rollmod)
         });
     });
 });
