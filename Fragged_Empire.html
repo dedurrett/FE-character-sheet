@@ -227,6 +227,13 @@
                             <td><input type="number" name="attr_fate_max" value="2" readonly/></td>
                             <td><input type="text" name="attr_fate_trait"/></td>
                         </tr>
+                        <tr> <!-- Fate Burned -->
+                            <td><div class="sheet-fate"><span data-i18n="atr_fateburned">Fate Burned</span></div></td>
+                            <td><div class="sheet-fatex">x</span></td>
+                            <td><input type="number" name="attr_fate_burn" value="0" min="0"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table> <!-- End Attributes -->
             </div>
@@ -2174,9 +2181,9 @@ on('change:race change:perception_assign change:perception_mod', function() { //
     });
 });
 
-on('change:race change:fate_mod', function() { // Calculate Max Fate
+on('change:race change:fate_mod change:fate_burn', function() { // Calculate Max Fate
     var racialMod = 0;
-    getAttrs(["race","fate_mod"], function(values) {
+    getAttrs(["race","fate_mod", "fate_burn"], function(values) {
         switch (values.race.toUpperCase()) {
             case "CORPORATION":
             case "AUGMENT":
@@ -2188,7 +2195,7 @@ on('change:race change:fate_mod', function() { // Calculate Max Fate
             default:
         }
         setAttrs({
-            fate_max: 2+racialMod+parseInt(values.fate_mod)
+            fate_max: 2+racialMod+parseInt(values.fate_mod)-parseInt(values.fate_burn)
         });
     });
 });
