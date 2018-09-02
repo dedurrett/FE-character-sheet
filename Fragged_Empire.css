@@ -357,7 +357,7 @@ input.sheet-fillerx[type="radio"]:checked ~ input.sheet-filler[type="radio"] + s
 	position: relative;
 	cursor: text;
 	word-wrap: break-word;
-    min-height: 45px;
+    min-height: 50px;
 }
 .sheet-auto-expand span {
 	visibility: hidden;
